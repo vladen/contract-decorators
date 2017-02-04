@@ -87,7 +87,7 @@ expect(contract.enabled).to.equal(enabled);
 
 <a name="constract-methodnameresolver"></a>
 ## methodNameResolver
-Is a property that returns function.
+Is a property that returns function value.
 
 ```js
 expect(contract.methodNameResolver).to.be.a('function')
@@ -107,7 +107,7 @@ Throws TypeError if not a function is assigned.
 expect(() => contract.methodNameResolver = 0).to.throw(TypeError)
 ```
 
-Calls configured methodNameResolver with original method when contract is broken.
+Calls configured methodNameResolver with argument method when contract is broken.
 
 ```js
 const method = () => {};
@@ -245,7 +245,7 @@ Throws TypeError if not a constructor function is assigned.
 expect(() => contract.PreconditionError = () => {}).to.throw(TypeError)
 ```
 
-Calls new PreconditionError with method name, predicate name, argument and argument index when contract is broken.
+Calls new PreconditionError with arguments method name, predicate name, method argument and argument index when contract is broken.
 
 ```js
 const argument = 1;
@@ -263,7 +263,7 @@ try {
 }
 ```
 
-Calls PreconditionError with method name and predicate returned by custom resolvers when contract is broken.
+Calls PreconditionError with arguments method name and predicate returned by custom resolvers when contract is broken.
 
 ```js
 const name = 'test';
@@ -404,7 +404,7 @@ Throws TypeError if not a constructor function is assigned.
 expect(() => contract.PostconditionError = () => {}).to.throw(TypeError)
 ```
 
-Calls new PostconditionError with method name, predicate name and method result when contract is broken.
+Calls new PostconditionError with arguments method name, predicate name and method result when contract is broken.
 
 ```js
 const result = 1;
@@ -424,7 +424,7 @@ try {
 }
 ```
 
-Calls PostconditionError with method name and predicate returned by custom resolvers when contract is broken.
+Calls PostconditionError with arguments method name and predicate returned by custom resolvers when contract is broken.
 
 ```js
 const name = 'test';
@@ -443,7 +443,7 @@ try {
 
 <a name="constract-predicatenameresolver"></a>
 ## predicateNameResolver
-Is a property that returns a function.
+Is a property that returns a function value.
 
 ```js
 expect(contract.predicateNameResolver).to.be.a('function')
@@ -463,7 +463,7 @@ Throws TypeError if not a function is assigned.
 expect(() => contract.predicateNameResolver = 0).to.throw(TypeError)
 ```
 
-Calls configured predicateNameResolver with predicate when contract is broken.
+Calls configured predicateNameResolver with argument predicate when contract is broken.
 
 ```js
 const predicate = () => false;

@@ -27,9 +27,13 @@ In other environments than development preconditions and postconditions are disa
 Gets or sets function resolving name of method that caused contract violation.
 
 **Kind**: static property of <code>[contract](#module_contract)</code>  
+**Throws**:
+
+- <code>TypeError</code> Attempt to assign something that not a function.
+
 **Params**
 
-- method <code>function</code> - Resolver function accepting 1 argument: method to resolve.
+- methodNameResolver <code>function</code> - Resolver function accepting 1 argument: method to resolve.
 
 <a name="module_contract.PreconditionError"></a>
 
@@ -37,6 +41,10 @@ Gets or sets function resolving name of method that caused contract violation.
 Gets or sets constructor function used to instantiate errors when preconditions are violated.
 
 **Kind**: static property of <code>[contract](#module_contract)</code>  
+**Throws**:
+
+- <code>TypeError</code> Attempt to assign something that not a constructor function.
+
 **Params**
 
 - PreconditionError <code>Error</code> - Constructor function accepting 4 arguments: method name, predicate name, method argument value and index.
@@ -49,6 +57,10 @@ Method name is a string returned by predicateNameResolver.
 Gets or sets constructor function used to instantiate errors when postconditions are violated.
 
 **Kind**: static property of <code>[contract](#module_contract)</code>  
+**Throws**:
+
+- <code>TypeError</code> Attempt to assign something that not a constructor function.
+
 **Params**
 
 - PostconditionError <code>Error</code> - Constructor function accepting 4 arguments: method name, predicate name and method return value.
@@ -61,6 +73,10 @@ Method name is a string returned by predicateNameResolver.
 Gets or sets function resolving name of predicate that asserted contract violation.
 
 **Kind**: static property of <code>[contract](#module_contract)</code>  
+**Throws**:
+
+- <code>TypeError</code> Attempt to assign something that not a function.
+
 **Params**
 
 - predicateNameResolver <code>function</code> - Resolver function accepting 1 argument: predicate to resolve.
@@ -71,6 +87,10 @@ Gets or sets function resolving name of predicate that asserted contract violati
 Configures preconditions and postconditions module.
 
 **Kind**: static method of <code>[contract](#module_contract)</code>  
+**Throws**:
+
+- <code>TypeError</code> Config contains properties with invalid values.
+
 **Params**
 
 - config <code>Object</code> - Object, containing one or more settings to apply: enabled, methodNameResolver, PreconditionError, PostconditionError and predicateNameResolver.
@@ -81,6 +101,10 @@ Configures preconditions and postconditions module.
 Decorator function validating arguments passed to decorated method.
 
 **Kind**: static method of <code>[contract](#module_contract)</code>  
+**Throws**:
+
+- <code>TypeError</code> Some predicate is not a function.
+
 **Params**
 
 - ...predicates <code>function</code> - List of predicate functions alined with list of expected arguments.
@@ -94,6 +118,10 @@ Argument considered valid if corresponding predicate returns truthy value.
 Decorator function validating result returned from decorated method.
 
 **Kind**: static method of <code>[contract](#module_contract)</code>  
+**Throws**:
+
+- <code>TypeError</code> Predicate is not a function.
+
 **Params**
 
 - predicate <code>function</code> - Predicate function to validate result with.

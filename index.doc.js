@@ -8,6 +8,8 @@ module.exports = {
    * Configures preconditions and postconditions module.
    * @param {Object} config
    * Object, containing one or more settings to apply: enabled, methodNameResolver, PreconditionError, PostconditionError and predicateNameResolver.
+   * @throws {TypeError}
+   * Config contains properties with invalid values.
    */
   configure(config) {},
 
@@ -20,9 +22,11 @@ module.exports = {
 
   /**
    * Gets or sets function resolving name of method that caused contract violation.
-   * @param {Function} method
+   * @param {Function} methodNameResolver
    * Resolver function accepting 1 argument: method to resolve.
    * @type {Function}
+   * @throws {TypeError}
+   * Attempt to assign something that not a function.
    */
   methodNameResolver: Function,
 
@@ -33,7 +37,9 @@ module.exports = {
    * Each predicate validates one argument.
    * Position of a predicate must match position of argument to validate with this predicate.
    * Argument considered valid if corresponding predicate returns truthy value.
-   * @return {Function}
+   * @returns {Function}
+   * @throws {TypeError}
+   * Some predicate is not a function.
    */
   precondition(...predicates) {},
 
@@ -44,6 +50,8 @@ module.exports = {
    * Method name is a string returned by methodNameResolver.
    * Method name is a string returned by predicateNameResolver.
    * @type {Error}
+   * @throws {TypeError}
+   * Attempt to assign something that not a constructor function.
    */
   PreconditionError: Error,
 
@@ -51,7 +59,9 @@ module.exports = {
    * Decorator function validating result returned from decorated method.
    * @param {Function} predicate
    * Predicate function to validate result with.
-   * @return {Function}
+   * @returns {Function}
+   * @throws {TypeError}
+   * Predicate is not a function.
    */
   postcondition(...predicates) {},
 
@@ -62,6 +72,8 @@ module.exports = {
    * Method name is a string returned by methodNameResolver.
    * Method name is a string returned by predicateNameResolver.
    * @type {Error}
+   * @throws {TypeError}
+   * Attempt to assign something that not a constructor function.
    */
   PostconditionError: Error,
 
@@ -70,6 +82,8 @@ module.exports = {
    * @param {Function} predicateNameResolver
    * Resolver function accepting 1 argument: predicate to resolve.
    * @type {Function}
+   * @throws {TypeError}
+   * Attempt to assign something that not a function.
    */
   predicateNameResolver: Function
 };

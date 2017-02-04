@@ -93,7 +93,7 @@ describe('constract', () => {
   });
 
   describe('methodNameResolver', () => {
-    it('Is a property that returns function', () =>
+    it('Is a property that returns function value', () =>
       expect(contract.methodNameResolver).to.be.a('function')
     );
 
@@ -107,7 +107,7 @@ describe('constract', () => {
       expect(() => contract.methodNameResolver = 0).to.throw(TypeError)
     );
 
-    it('Calls configured methodNameResolver with original method when contract is broken', () => {
+    it('Calls configured methodNameResolver with argument method when contract is broken', () => {
       const method = () => {};
       contract.methodNameResolver = spy();
       const decorator = precondition(() => false);
@@ -216,7 +216,7 @@ describe('constract', () => {
       expect(() => contract.PreconditionError = () => {}).to.throw(TypeError)
     );
 
-    it('Calls new PreconditionError with method name, predicate name, argument and argument index when contract is broken', () => {
+    it('Calls new PreconditionError with arguments method name, predicate name, method argument and argument index when contract is broken', () => {
       const argument = 1;
       function method() {}
       function predicate() { return false; }
@@ -233,7 +233,7 @@ describe('constract', () => {
       }
     });
 
-    it('Calls PreconditionError with method name and predicate returned by custom resolvers when contract is broken', () => {
+    it('Calls PreconditionError with arguments method name and predicate returned by custom resolvers when contract is broken', () => {
       const name = 'test';
       contract.PreconditionError = spy();
       contract.methodNameResolver = () => name;
@@ -345,7 +345,7 @@ describe('constract', () => {
       expect(() => contract.PostconditionError = () => {}).to.throw(TypeError)
     );
 
-    it('Calls new PostconditionError with method name, predicate name and method result when contract is broken', () => {
+    it('Calls new PostconditionError with arguments method name, predicate name and method result when contract is broken', () => {
       const result = 1;
       function method() { return result; }
       function predicate() { return false; }
@@ -362,7 +362,7 @@ describe('constract', () => {
       }
     });
 
-    it('Calls PostconditionError with method name and predicate returned by custom resolvers when contract is broken', () => {
+    it('Calls PostconditionError with arguments method name and predicate returned by custom resolvers when contract is broken', () => {
       const name = 'test';
       contract.PostconditionError = spy();
       contract.methodNameResolver = () => name;
@@ -380,7 +380,7 @@ describe('constract', () => {
   });
 
   describe('predicateNameResolver', () => {
-    it('Is a property that returns a function', () =>
+    it('Is a property that returns a function value', () =>
       expect(contract.predicateNameResolver).to.be.a('function')
     );
 
@@ -394,7 +394,7 @@ describe('constract', () => {
       expect(() => contract.predicateNameResolver = 0).to.throw(TypeError)
     );
 
-    it('Calls configured predicateNameResolver with predicate when contract is broken', () => {
+    it('Calls configured predicateNameResolver with argument predicate when contract is broken', () => {
       const predicate = () => false;
       contract.predicateNameResolver = spy();
       const decorator = precondition(predicate);

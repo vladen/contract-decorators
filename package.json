@@ -1,6 +1,6 @@
 {
   "name": "contract-decorators",
-  "description": "Decorators to ensure that class method is called with valid arguments and/or returns expected result.",
+  "description": "Design by Contract decorators for ECMAScript.",
   "keywords": [
     "decorators",
     "contracts",
@@ -8,7 +8,7 @@
     "precondition",
     "postcondition"
   ],
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "homepage": "https://github.com/vladen/contract-decorators#readme",
   "repository": {
