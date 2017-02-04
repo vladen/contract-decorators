@@ -8,6 +8,7 @@
 
 * [Installation](#installation)
 * [Usage](#usage)
+* [API](https://github.com/vladen/contract-decorators/blob/master/API.md)
 * [Tests](https://github.com/vladen/contract-decorators/blob/master/SPEC.md)
 * [License](#license)
 
@@ -26,9 +27,9 @@ $ npm install --save contract-decorators
 Example code:
 
 ```js
-const { precondition, postcondition } = require('contract-decorators');
-
-precondition.enabled = postcondition.enabled = true;
+const contract = require('contract-decorators');
+const { precondition, postcondition } = contract;
+contract.enabled = true;
 
 const test = new class Test {
   @precondition(a => a < 9, b => b > 1)
@@ -47,7 +48,7 @@ test.method(0, 0);
 test.method(2, 4);
 // Uncaught PostconditionError: Postcondition failed. Result of method "method" must satisfy predicate "result => result % 2" but it does not: 6.
 
-precondition.enabled = postcondition.enabled = false;
+contract.enabled = false;
 
 test.method(9, 0);
 // 9

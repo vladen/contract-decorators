@@ -2,11 +2,13 @@
   "name": "contract-decorators",
   "description": "Decorators to ensure that class method is called with valid arguments and/or returns expected result.",
   "keywords": [
-    "decorator",
+    "decorators",
     "contracts",
-    "validation"
+    "ES2017",
+    "precondition",
+    "postcondition"
   ],
-  "version": "0.1.1",
+  "version": "0.2.0",
   "license": "MIT",
   "homepage": "https://github.com/vladen/contract-decorators#readme",
   "repository": {
@@ -27,24 +29,30 @@
     "index.js"
   ],
   "scripts": {
+    "all": "npm run lint && npm run test && npm run doc",
     "check": "mocha --bail --opts mocha.opts test.js",
-    "lint": "eslint *.js",
+    "doc": "npm run doc:api && npm run doc:spec",
+    "doc:api": "jsdoc2md index.doc.js --global-index-format dl --member-index-format grouped --module-index-format dl --param-list-format list --property-list-format list > API.md",
+    "doc:spec": "mocha --opts mocha.opts --reporter markdown test.js > SPEC.md",
+    "lint": "eslint index.js test.js",
     "prepublish": "npm run lint && npm run test",
-    "spec": "mocha --opts mocha.opts --reporter markdown test.js > SPEC.md",
     "test": "nyc --reporter=lcov mocha --opts mocha.opts test.js && nyc report",
     "travis": "codeclimate-test-reporter < coverage/lcov.info"
   },
   "devDependencies": {
-    "babel-cli": "^6.22.2",
-    "babel-core": "^6.22.1",
-    "babel-eslint": "^7.1.1",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-register": "^6.22.0",
+    "babel-cli": "^6",
+    "babel-core": "^6",
+    "babel-eslint": "^7",
+    "babel-plugin-transform-decorators-legacy": "^1",
+    "babel-register": "^6",
     "chai": "^3",
     "codeclimate-test-reporter": "^0",
     "eslint": "^3",
+    "jsdoc-to-markdown": "^2",
     "mocha": "^3",
-    "nyc": "^10"
+    "nyc": "^10",
+    "sinon": "^1",
+    "sinon-chai": "^2"
   },
   "engines": {
     "node": ">=6.9"
