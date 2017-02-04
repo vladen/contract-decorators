@@ -34,7 +34,7 @@
     "doc": "npm run doc:api && npm run doc:spec",
     "doc:api": "jsdoc2md index.doc.js --global-index-format dl --member-index-format grouped --module-index-format dl --param-list-format list --property-list-format list > API.md",
     "doc:spec": "mocha --opts mocha.opts --reporter markdown test.js > SPEC.md",
-    "lint": "eslint index.js test.js",
+    "lint": "eslint *.js",
     "prepublish": "npm run lint && npm run test",
     "test": "nyc --reporter=lcov mocha --opts mocha.opts test.js && nyc report",
     "travis": "codeclimate-test-reporter < coverage/lcov.info"
