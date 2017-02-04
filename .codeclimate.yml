@@ -6,4 +6,5 @@ engines:
     enabled: true
 ratings:
   paths:
-  - "**.js"
+  - "index.js"
+  - "test.js"
