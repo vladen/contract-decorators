@@ -1,0 +1,15 @@
+{
+  "env": {
+    "mocha": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "globals": {
+    "Promise": false,
+    "Symbol": false
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 7
+  }
+}
