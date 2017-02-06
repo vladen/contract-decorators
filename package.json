@@ -1,6 +1,6 @@
 {
   "name": "contract-decorators",
-  "description": "Design by Contract decorators for ECMAScript.",
+  "description": "Design by Contract (precondition/postcondition) class method decorators for ECMAScript.",
   "keywords": [
     "decorators",
     "contracts",
@@ -8,7 +8,7 @@
     "precondition",
     "postcondition"
   ],
-  "version": "0.2.1",
+  "version": "0.2.2",
   "license": "MIT",
   "homepage": "https://github.com/vladen/contract-decorators#readme",
   "repository": {

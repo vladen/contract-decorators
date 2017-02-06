@@ -1,10 +1,10 @@
 # contract-decorators
 
-[![npm](https://img.shields.io/npm/v/contract-decorators.svg)](https://www.npmjs.com/package/contract-decorators)
-[![Build Status](https://img.shields.io/travis/vladen/contract-decorators/master.svg)](https://travis-ci.org/vladen/contract-decorators)
-[![Code Climate](https://img.shields.io/codeclimate/github/vladen/contract-decorators.svg)](https://codeclimate.com/github/vladen/contract-decorators)
-[![Test Coverage](https://img.shields.io/codeclimate/coverage/github/vladen/contract-decorators.svg)](https://codeclimate.com/github/vladen/contract-decorators/coverage)
-[![Issues](https://img.shields.io/codeclimate/issues/github/vladen/contract-decorators.svg)](https://codeclimate.com/github/vladen/contract-decorators/issues)
+[![NPM](https://nodei.co/npm/contract-decorators.png?compact=true)](https://nodei.co/npm/contract-decorators/)
+
+[![Build Status](https://travis-ci.org/vladen/contract-decorators.svg)](https://travis-ci.org/vladen/contract-decorators)
+[![Code Climate](https://codeclimate.com/github/vladen/contract-decorators/badges/gpa.svg)](https://codeclimate.com/github/vladen/contract-decorators)
+[![Test Coverage](https://codeclimate.com/github/vladen/contract-decorators/badges/coverage.svg)](https://codeclimate.com/github/vladen/contract-decorators/coverage)
 
 Class method decorators to ensure that class method is called with valid arguments (precondition) and/or returns expected result (postcondition).
 
